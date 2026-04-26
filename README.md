@@ -3,7 +3,8 @@
 > Classifies expense bill line items into one of **103** accounting categories.
 > **87.5% accuracy** on 5-fold `GroupKFold(_id)` out-of-fold predictions, ±1.3% per-fold std — above the 85% bar set in the brief.
 
-![pipeline](assets/pipeline.png)
+<img width="930" height="857" alt="image" src="https://github.com/user-attachments/assets/c595b149-10aa-4021-8051-37929e9c8f05" />
+
 
 ---
 
@@ -33,7 +34,7 @@ That's it — the notebook is self-contained. Random seed is fixed (`SEED = 42`)
 
 The single most important methodology choice is **bill-level grouping in cross-validation**. 801 bills in this dataset have multiple line items; a random train/test split lets line items from the same bill leak across, inflating accuracy.
 
-![validation](assets/validation.png)
+<img width="1099" height="407" alt="image" src="https://github.com/user-attachments/assets/409dea0c-b2aa-4ecb-9839-5330743711f2" />
 
 `GroupKFold(n_splits=5, groups=_id)` keeps every line item of a bill in the same fold. Every number reported below is honest under this split.
 
