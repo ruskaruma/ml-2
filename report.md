@@ -27,7 +27,8 @@ What I'm honest about: macro F1 is 0.63. That's because 34 of the 103 categories
 
 **The tail is brutal.** 16 categories have exactly one sample. 34 have fewer than five. Optimise for accuracy, you're fine. They barely move the needle. Optimise for macro F1, they kill you. Both are reported.
 
-![class distribution](assets/class_distribution.png)
+<img width="1340" height="885" alt="image" src="https://github.com/user-attachments/assets/9cec0738-0542-4955-a10e-a2ee539e4701" />
+
 
 *Top 5 classes hold 50% of the data. The 34 rare classes hold 1.5% between them. The shape of the problem isn't "classify 103 things". It's "classify ~20 things well, and shrug at the long tail honestly."*
 
@@ -81,7 +82,8 @@ Per-fold accuracy: 0.888, 0.876, 0.884, 0.855, 0.872. Std 1.3%. Nothing fragile.
 
 Drop one feature block at a time. Re-run CV. Measure the drop.
 
-![ablation](assets/ablation.png)
+<img width="1344" height="898" alt="image" src="https://github.com/user-attachments/assets/44155a6f-eedf-4ca0-b4fb-5f9585c1ca2b" />
+
 
 | Removed | CV Accuracy | Drop |
 |---|---:|---:|
@@ -110,7 +112,8 @@ These aren't *wrong*. They're the cases where a human reviewer would also hesita
 
 Not the model. The model + a confidence threshold + a human queue.
 
-![deployment](assets/deployment.png)
+<img width="1943" height="853" alt="image" src="https://github.com/user-attachments/assets/30b3f437-c71e-428b-b402-00628166d346"/>
+
 
 The 87.5% of cases where the top decision-function score dwarfs the runner-up: auto-classify. The 12.5% where the gap is small (especially on those economically adjacent pairs above): route to human review. That's how production finance systems actually work, and the confusion analysis tells you *exactly* which category boundaries to flag.
 
